@@ -19,10 +19,19 @@ public class CreateFile
             if(myFile.createNewFile())
             {
                 System.out.println("File created successfully at " + myFile.getAbsolutePath());
+
+                System.out.println("File length = " + myFile.length());
             }
             else
             {
                 System.out.println("File already exists at " + myFile.getAbsolutePath());
+
+                if(myFile.exists())
+                {
+                    myFile.delete();
+
+                    System.out.println("\nFile has been deleted");
+                }
             }
         } catch (IOException e)
         {
