@@ -1,8 +1,6 @@
 package ie.atu;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class CreateFile
 {
@@ -32,9 +30,10 @@ public class CreateFile
         }
 
         //Use FileWriter to write to the File
-        try(FileWriter writer = new FileWriter(fileName, true))
+        try(PrintWriter writer = new PrintWriter(new FileWriter(fileName, true)))
         {
-            writer.write("More Stuff");
+            writer.println("This line will be appended");
+            writer.printf("Appended formatted content:");
 
             System.out.println("Content Successfully Added");
         }
