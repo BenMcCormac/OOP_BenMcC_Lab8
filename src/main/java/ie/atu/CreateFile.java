@@ -1,6 +1,7 @@
 package ie.atu;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class CreateFile
@@ -27,6 +28,19 @@ public class CreateFile
         } catch (IOException e)
         {
             System.out.println("An error occurred while creating the file.");
+            e.printStackTrace();
+        }
+
+        //Use FileWriter to write to the File
+        try(FileWriter writer = new FileWriter(fileName, true))
+        {
+            writer.write("More Stuff");
+
+            System.out.println("Content Successfully Added");
+        }
+        catch (IOException e)
+        {
+            System.out.println("An Error has occurred");
             e.printStackTrace();
         }
 
