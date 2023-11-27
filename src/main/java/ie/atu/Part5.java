@@ -2,6 +2,7 @@ package ie.atu;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Part5
 {
@@ -9,7 +10,10 @@ public class Part5
     {
         System.out.println("Please enter a FileName:   ");
         //Specify the file name
-        String fileName = System.in.read();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter FileName");
+        String fileName = scanner.nextLine();
 
         //Create a new file object
         File myFile = new File(fileName);
